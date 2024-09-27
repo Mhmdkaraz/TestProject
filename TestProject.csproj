@@ -17,10 +17,7 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Dtos\ResponseDtos\" />
-    <Folder Include="Dtos\RequestDtos\" />
     <Folder Include="Helpers\" />
-    <Folder Include="Services\UserService\" />
   </ItemGroup>
 
 </Project>
