@@ -1,0 +1,694 @@
+{
+	"info": {
+		"_postman_id": "8309b6bd-39f0-4e9d-a214-8a7ae6224c22",
+		"name": "TestProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23043977"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "create-user",
+							"item": [
+								{
+									"name": "/api/Admin/create-user",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"balance\": \"<double>\",\n  \"email\": \"<email>\",\n  \"name\": \"<string>\",\n  \"password\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"dob\": \"<date>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Admin/create-user",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Admin",
+												"create-user"
+											]
+										},
+										"description": "### Create User\n\nThis endpoint allows administrators to create a new user.\n\n#### Request Body\n\n- `balance` (string, optional): The balance of the user.\n    \n- `email` (string, required): The email address of the user.\n    \n- `name` (string, required): The name of the user.\n    \n- `password` (string, required): The password for the user account.\n    \n- `phoneNumber` (string, optional): The phone number of the user.\n    \n- `dob` (string, optional): The date of birth of the user.\n    \n\n#### Response\n\nThe response for this request is null."
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"balance\": \"<double>\",\n  \"email\": \"<email>\",\n  \"name\": \"<string>\",\n  \"password\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"dob\": \"<date>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/Admin/create-user",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Admin",
+														"create-user"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "update-user",
+							"item": [
+								{
+									"name": "/api/Admin/update-user",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<uuid>\",\n  \"email\": \"<email>\",\n  \"name\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"dob\": \"<date>\",\n  \"balance\": \"<double>\",\n  \"password\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Admin/update-user",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Admin",
+												"update-user"
+											]
+										},
+										"description": "This endpoint allows administrators to update user information. The HTTP POST request should be sent to {{baseUrl}}/api/Admin/update-user with the required parameters in the request body.\n\n### Request Body\n\n- id (string): The unique identifier of the user.\n    \n- email (string): The updated email address of the user.\n    \n- name (string): The updated name of the user.\n    \n- phoneNumber (string): The updated phone number of the user.\n    \n- dob (string): The updated date of birth of the user.\n    \n- balance (string): The updated balance of the user.\n    \n- password (string): The updated password of the user.\n    \n\n### Response\n\nThe response for this request is expected to be in JSON format. However, as per the provided examples, the response can be null.\n\n### JSON Schema for Response\n\n``` json\n{\n  \"type\": \"object\",\n  \"properties\": {},\n  \"additionalProperties\": true\n}\n\n ```"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<uuid>\",\n  \"email\": \"<email>\",\n  \"name\": \"<string>\",\n  \"phoneNumber\": \"<string>\",\n  \"dob\": \"<date>\",\n  \"balance\": \"<double>\",\n  \"password\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/Admin/update-user",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Admin",
+														"update-user"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "delete-user",
+							"item": [
+								{
+									"name": "/api/Admin/delete-user",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<uuid>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Admin/delete-user",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Admin",
+												"delete-user"
+											]
+										},
+										"description": "### Delete User\n\nThis endpoint is used to delete a user by their ID.\n\n#### Request Body\n\n- id (string, required): The ID of the user to be deleted.\n    \n\n#### Response\n\nThe response for this request is expected to be null.\n\n#### JSON Schema\n\n``` json\n{\n  \"type\": \"null\"\n}\n\n ```"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<uuid>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/Admin/delete-user",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Admin",
+														"delete-user"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "add-balance",
+							"item": [
+								{
+									"name": "/api/Admin/add-balance",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<uuid>\",\n  \"amount\": \"<double>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Admin/add-balance",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Admin",
+												"add-balance"
+											]
+										},
+										"description": "### Add Balance for Admin\n\nThis endpoint allows administrators to add balance to a user's account.\n\n**HTTP Request**  \n`POST {{baseUrl}}/api/Admin/add-balance`\n\n**Parameters**\n\n- `id` (string, required): The user ID for whom the balance needs to be added.\n    \n- `amount` (string, required): The amount to be added to the user's balance.\n    \n\n**Example Request**\n\n``` json\n{\n  \"id\": \"user123\",\n  \"amount\": \"100\"\n}\n\n ```\n\n**Response**  \nThe response for this request is a JSON schema.\n\n``` json\nnull\n\n ```"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": \"<uuid>\",\n  \"amount\": \"<double>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/Admin/add-balance",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Admin",
+														"add-balance"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							],
+							"auth": {
+								"type": "bearer",
+								"bearer": [
+									{
+										"key": "token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+										"type": "string"
+									}
+								]
+							},
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"packages": {},
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"packages": {},
+										"exec": [
+											""
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "/api/Admin",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/Admin",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Admin"
+									]
+								},
+								"description": "### API Request\n\nThis endpoint makes an HTTP GET request to retrieve the list of users from the admin API.\n\n### Request Body\n\nThis request does not require a request body.\n\n### Response\n\nThe response will be in JSON format and will have the following schema:\n\n``` json\n{\n    \"users\": [],\n    \"success\": true,\n    \"message\": \"\",\n    \"errors\": null\n}\n\n ```\n\n- `users`: An array containing the list of users.\n    \n- `success`: A boolean indicating the success of the request.\n    \n- `message`: A string providing additional information about the response.\n    \n- `errors`: A null value indicating the absence of errors in the response."
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Admin",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Admin"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "login",
+							"item": [
+								{
+									"name": "/api/User/login",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/User/login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"User",
+												"login"
+											]
+										},
+										"description": "### User Login\n\nThis endpoint allows users to log in by providing their email and password.\n\n#### Request Body\n\n- `email` (string, required): The email address of the user.\n    \n- `password` (string, required): The password for the user's account.\n    \n\n#### Response\n\nThe response will be `null` if the login attempt is unsuccessful."
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/User/login",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"User",
+														"login"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "transfer",
+							"item": [
+								{
+									"name": "/api/User/transfer",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"receiverId\": \"<uuid>\",\n  \"amount\": \"<double>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/User/transfer",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"User",
+												"transfer"
+											]
+										},
+										"description": "This endpoint allows the transfer of a certain amount to another user. The request should be sent as an HTTP POST to the specified URL. The request body should contain the receiver's ID and the amount to be transferred.\n\n### Request Body\n\n- receiverId (string): The ID of the user who will receive the transfer.\n    \n- amount (string): The amount to be transferred.\n    \n\n### Response\n\nThe response for this request is a JSON schema, but there are no specific examples provided."
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"receiverId\": \"<uuid>\",\n  \"amount\": \"<double>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/User/transfer",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"User",
+														"transfer"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{bearerToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://localhost:7094"
+		}
+	]
+}
